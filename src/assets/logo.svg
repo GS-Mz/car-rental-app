@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="787" height="787" viewBox="0 0 787 787">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="393.5" y1="712.5" x2="393.5" y2="74.469" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#407ded"/>
+      <stop offset="0.502" stop-color="#154ccd"/>
+      <stop offset="0.506" stop-color="#154ccd"/>
+      <stop offset="1" stop-color="#0c149b"/>
+    </linearGradient>
+  </defs>
+  <path id="LuxDrive_1" data-name="LuxDrive 1" class="cls-1" d="M232.9,712.505H622.051l74.125-123.892H300.844l49.417-80.53H714.707l-49.417-92.92,80.3-12.389L554.1,74.46H412.031L609.7,415.163H523.218L331.729,93.044l-55.593,92.92L232.9,117.822,41.408,452.331l61.77,117.7L300.844,235.52l49.417,74.335L158.772,631.975l117.364,6.194Z"/>
+</svg>
