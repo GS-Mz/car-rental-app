@@ -3,7 +3,7 @@
 const Form = () => {
 
   return (
-    <div className="flex flex-row  justify-center z-10 relative mt-[-45px]">
+    <div className="flex flex-row  justify-center relative mt-[-45px]">
       <form className="flex sm-max:flex-col justify-between items-center shadow-2xl w-[80%] max-w-7xl px-6 py-4 rounded-lg bg-white sm-max:px-10 sm-max:py-6">
         <div className="mr-4 sm-max:w-full sm-max:py-2">
           <label

@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <img src={car_one_1} alt="Jaguar F-type 2022" className="md:block hidden  absolute w-[50%]  right-[-100px] top-52" />
+      <img src={car_one_1} alt="Jaguar F-type 2022" className="md:block hidden  absolute w-[48%]  right-[-5em] top-[10rem]" />
 
       {/* <div className={`${scrolled ? "hidden" : "block"} absolute sm-max:bottom-10 bottom-20 w-full flex justify-center items-center`}>
         <a href="#about">

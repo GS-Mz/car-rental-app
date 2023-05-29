@@ -34,7 +34,7 @@ const About = () => {
     <span id="how-it-work"></span>
     <section 
     
-    className="bg-white flex flex-col items-center  z-10 mx-auto my-48 relative md-max:my-40 sm-max:mx-12">
+    className="bg-white flex flex-col items-center  mx-auto my-48 relative md-max:my-40 sm-max:mx-12">
       <div className="flex flex-col items-center mb-10 ">
         <p className={`${styles.aboutSubText} `}>HOW IT WORK</p>
         <h3 className={`${styles.aboutHeadText} `}>

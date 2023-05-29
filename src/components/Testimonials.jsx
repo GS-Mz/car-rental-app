@@ -41,7 +41,7 @@ const Testimonials = () => {
       <div className="flex justify-center my-6 items-center justify-evenly">
         <button
           className="w-12 h-12 rounded-full bg-white grid place-content-center 
-drop-shadow-xl md-max:mr-2"
+shadow-xl md-max:mr-2"
           onClick={handlePrev}
         >
           <SlArrowLeft color="black"  />
@@ -76,7 +76,7 @@ drop-shadow-xl md-max:mr-2"
         ))}
         <button
           className="w-12 h-12 rounded-full bg-primary grid place-content-center 
-drop-shadow-xl md-max:ml-2"
+shadow-xl md-max:ml-2"
           onClick={handleNext}
         >
           <SlArrowRight color="white"/>

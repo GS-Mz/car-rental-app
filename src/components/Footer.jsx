@@ -15,7 +15,7 @@ import { styles } from "../styles";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="z-20">
       <div className="bg-black-200 text-white flex md-max:flex-wrap justify-center p-12 pt-64 relative ">
         <div className="translate-y-[-7rem] overflow-hidden absolute top-[-12vh] h-96 sm-max:h-full mb-6 w-[60%] sm-max:w-[70%] rounded-xl ">
           <div className="relative translate-y-28 h-72 sm-max:h-[64] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex sm-max:flex-col sm-max:items-center sm-max:justify-center sm-max:px-4">

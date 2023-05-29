@@ -12,9 +12,9 @@ function App() {
         <About/>
 
         <How/>
-        <div id="rent">
+
         <Popular/>
-        </div>
+
         
         <Testimonials/>
         <Footer/>

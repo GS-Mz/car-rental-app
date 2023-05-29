@@ -34,7 +34,7 @@ const CarCard = (car) => {
 
     if (!apiData) {
         return (
-            <div className="p-2 md-max:w-64  aspect-[1/1.7] bg-white border-2 border-[#f2f3f5] rounded-lg overflow-hidden">
+            <div className="p-2 w-64  aspect-[1/1.7] bg-white border-2 border-[#f2f3f5] rounded-lg overflow-hidden">
             <div className="bg-white-200 border-2 h-[10rem] border-[#f2f3f5] overflow-hidden">
               <img
                 className="min-w-[15.5rem]"
@@ -120,7 +120,7 @@ const CarCard = (car) => {
       }
 
   return (
-    <div className="p-2 md-max:w-64  aspect-[1/1.7] bg-white border-2 border-[#f2f3f5] rounded-lg overflow-hidden">
+    <div className="p-2 w-64  aspect-[1/1.7] bg-white border-2 border-[#f2f3f5] rounded-lg overflow-hidden">
       <div className="bg-white-200 border-2 h-[10rem] border-[#f2f3f5] overflow-hidden">
         <img
           className="min-w-[15.5rem]"
