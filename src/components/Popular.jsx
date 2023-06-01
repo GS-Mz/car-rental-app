@@ -6,12 +6,14 @@ import { HiOutlineMagnifyingGlassCircle } from "react-icons/hi2";
 
 import React, { useState } from "react";
 
-const PopularCars = () => {
+const PopularCars = ({abrirModal}) => {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const handleAbrirModal = () => {
+    abrirModal();
+  }
 
   return (
-    <section className="flex flex-col  justify-center items-center">
+    <section className="flex flex-col  justify-center items-center sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0">
       <div className="flex flex-col items-center">
         <p className={`${styles.aboutSubText}`}>popular rental deals</p>
         <h3 className={`${styles.aboutHeadText} `}>
@@ -29,15 +31,15 @@ const PopularCars = () => {
 
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={handleAbrirModal}
         className="flex items-center bg-white rounded-full text-blue-400 border-primary border-2 w-fit px-6 py-2 font-medium mt-6"
       >
         Search your car
         <HiOutlineMagnifyingGlassCircle size={20} className="ml-2" />
       </button>
-      <SearchCarModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      
     </section>
   );
 };
 
-export default SectionWrapper(PopularCars, "Popular Cars");
+export default PopularCars;

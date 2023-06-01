@@ -26,7 +26,6 @@ const CarCard = (car) => {
           fetch(`https://infocarsapi.p.rapidapi.com/cars/${lastLink}`, options)
             .then(response => response.json())
             .then((response) => {
-                console.log(response)
                 setApiData(response.data)
             })
             .catch(err => console.error(err));

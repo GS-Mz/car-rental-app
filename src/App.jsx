@@ -1,7 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import { Navbar, Hero, About, Form, Makers, How, Popular, Testimonials, Footer } from "./components";
+import { Navbar, Hero, About, Form, Makers, How, Popular, Testimonials, Footer, SearchCarModal } from "./components";
+import { useState } from "react";
 
 function App() {
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+
   return (
     <BrowserRouter>
         <Navbar />
@@ -13,8 +18,9 @@ function App() {
 
         <How/>
 
-        <Popular/>
-
+        
+        <Popular abrirModal={() => setModalVisible(true)} cerrarModal={() => setModalVisible(false)}/>
+        {modalVisible && <SearchCarModal  cerrarModal={() => setModalVisible(false)}/>}
         
         <Testimonials/>
         <Footer/>
