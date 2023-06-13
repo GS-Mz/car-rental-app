@@ -86,36 +86,50 @@ const LoadingCar = () => {
   );
 };
 
-const CompleteCar = ({actualCar}) => {
+const CompleteCar = ({ actualCar }) => {
   const { maker, model, year } = actualCar; //Desestructuración del objeto car
 
   return (
     <div className="mt-6 p-2 w-full  aspect-[1/0.5] bg-white border-2 border-[#f2f3f5] rounded-lg">
       <div className="">
         <div className="flex justify-between mt-2 mx-4">
-          <p className="font-semibold text-xl capitalize">{maker} {model} - {year}</p>
+          <p className="font-semibold text-xl capitalize">
+            {maker} {model} - {year}
+          </p>
 
-          {actualCar.score ? <div className="flex">
-            <svg
-              className="w-[25px] mr-2"
-              viewBox="0 0 576 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill="#ffcd61"
-                d="M316.7 17.8l65.43 132.4l146.4 21.29c26.27 3.796 36.79 36.09 17.75 54.59l-105.9 102.1l25.05 145.5c4.508 26.31-23.23 45.9-46.49 33.7L288 439.6l-130.9 68.7C133.8 520.5 106.1 500.9 110.6 474.6l25.05-145.5L29.72 226.1c-19.03-18.5-8.516-50.79 17.75-54.59l146.4-21.29l65.43-132.4C271.1-6.083 305-5.786 316.7 17.8z"
-              />
-            </svg>
-            <p className="font-semibold text-lg ">{actualCar.score.overallScore}{"/10 "}</p>
-          </div> : <div></div>}
+          {actualCar.score ? (
+            <div className="flex">
+              <svg
+                className="w-[25px] mr-2"
+                viewBox="0 0 576 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="#ffcd61"
+                  d="M316.7 17.8l65.43 132.4l146.4 21.29c26.27 3.796 36.79 36.09 17.75 54.59l-105.9 102.1l25.05 145.5c4.508 26.31-23.23 45.9-46.49 33.7L288 439.6l-130.9 68.7C133.8 520.5 106.1 500.9 110.6 474.6l25.05-145.5L29.72 226.1c-19.03-18.5-8.516-50.79 17.75-54.59l146.4-21.29l65.43-132.4C271.1-6.083 305-5.786 316.7 17.8z"
+                />
+              </svg>
+              <p className="font-semibold text-lg ">
+                {actualCar.score.overallScore}
+                {"/10 "}
+              </p>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
-      <div className="flex mt-4 justify-center">
-        <div className=" bg-white-200 border-2 max-w-[42rem] max-h-[23rem] border-[#f2f3f5] overflow-hidden">
-          {
-            actualCar.featuredImageUrl ? <img className="w-[46rem] " src={actualCar.featuredImageUrl} alt={`${model} image`} /> : <img className="w-[46rem] " src={ghostCar} alt={`loading image`} />
-          }
-          
+      <div className="flex mt-4 justify-center md-max:flex-col ">
+        <div className=" bg-white-200 border-2 max-w-[42rem] max-h-[22rem] border-[#f2f3f5] overflow-hidden flex flex-col justify-center">
+          {actualCar.featuredImageUrl ? (
+            <img
+              className="w-[46rem]"
+              src={actualCar.featuredImageUrl}
+              alt={`${model} image`}
+            />
+          ) : (
+            <img className="w-[46rem] " src={ghostCar} alt={`loading image`} />
+          )}
         </div>
 
         <div className="flex flex-col pl-4  justify-between px-2">
@@ -126,8 +140,16 @@ const CompleteCar = ({actualCar}) => {
                   <VscGear color="grey" size={15} />
                 </span>
                 <div className="text-start h-[3rem]">
-                  <p className="text-xs ml-2 ">{actualCar.specifications ? actualCar.specifications[0].name : "?"}</p>
-                  <p className="text-xs font-semibold ml-2">{actualCar.specifications ? actualCar.specifications[0].value : "...?"}</p>
+                  <p className="text-xs ml-2 ">
+                    {actualCar.specifications
+                      ? actualCar.specifications[0].name
+                      : "?"}
+                  </p>
+                  <p className="text-xs font-semibold ml-2">
+                    {actualCar.specifications
+                      ? actualCar.specifications[0].value
+                      : "...?"}
+                  </p>
                 </div>
               </div>
               <div className="flex my-2 text-grey">
@@ -135,8 +157,16 @@ const CompleteCar = ({actualCar}) => {
                   <TbManualGearbox color="grey" size={15} />
                 </span>
                 <div className="text-start h-[3rem]">
-                  <p className="text-xs ml-2 ">{actualCar.specifications ? actualCar.specifications[34].name : "?"}</p>
-                  <p className="text-xs font-semibold ml-2">{actualCar.specifications ? actualCar.specifications[34].value : "...?"}</p>
+                  <p className="text-xs ml-2 ">
+                    {actualCar.specifications
+                      ? actualCar.specifications[34].name
+                      : "?"}
+                  </p>
+                  <p className="text-xs font-semibold ml-2">
+                    {actualCar.specifications
+                      ? actualCar.specifications[34].value
+                      : "...?"}
+                  </p>
                 </div>
               </div>
               <div className="flex my-2 text-grey">
@@ -144,8 +174,16 @@ const CompleteCar = ({actualCar}) => {
                   <FaCarSide color="grey" size={15} />
                 </span>
                 <div className="text-start h-[3rem]">
-                  <p className="text-xs ml-2 ">{actualCar.specifications ? actualCar.specifications[3].name : "?"}</p>
-                  <p className="text-xs font-semibold ml-2">{actualCar.specifications ? actualCar.specifications[3].value : "...?"}</p>
+                  <p className="text-xs ml-2 ">
+                    {actualCar.specifications
+                      ? actualCar.specifications[3].name
+                      : "?"}
+                  </p>
+                  <p className="text-xs font-semibold ml-2">
+                    {actualCar.specifications
+                      ? actualCar.specifications[3].value
+                      : "...?"}
+                  </p>
                 </div>
               </div>
               <div className="flex my-2 text-grey">
@@ -153,15 +191,24 @@ const CompleteCar = ({actualCar}) => {
                   <TbRoute2 color="grey" size={15} />
                 </span>
                 <div className="text-start h-[3rem]">
-                  <p className="text-xs ml-2 ">{actualCar.specifications ? actualCar.specifications[26].name : "?"}</p>
-                  <p className="text-xs font-semibold ml-2">{actualCar.specifications ? actualCar.specifications[26].value : "...?"}</p>
+                  <p className="text-xs ml-2 ">
+                    {actualCar.specifications
+                      ? actualCar.specifications[26].name
+                      : "?"}
+                  </p>
+                  <p className="text-xs font-semibold ml-2">
+                    {actualCar.specifications
+                      ? actualCar.specifications[26].value
+                      : "...?"}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div className="flex justify-between border-t-2 border-[#f2f3f5] py-4">
             <p className="font-semibold">
-            ${Number(actualCar.priceRange.min_msrp / 365).toFixed(2)} <span className="font-normal">/day</span>
+              ${Number(actualCar.priceRange.min_msrp / 365).toFixed(2)}{" "}
+              <span className="font-normal">/day</span>
             </p>
           </div>
         </div>
@@ -177,7 +224,7 @@ const SearchCarModal = ({ cerrarModal }) => {
   const [selectedMaker, setSelectedMaker] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
-  const [actualCar, setActualCar] = useState(null)
+  const [actualCar, setActualCar] = useState(null);
   const [rolled, setRolled] = useState(false);
 
   useEffect(() => {
@@ -201,13 +248,13 @@ const SearchCarModal = ({ cerrarModal }) => {
   };
 
   const handleSelectMakerChange = (event) => {
-    setModels([])
-    setYears([])
+    setModels([]);
+    setYears([]);
     setSelectedMaker(event.target.value);
   };
 
   const handleSelectModelChange = (event) => {
-    setYears([])
+    setYears([]);
     setSelectedModel(event.target.value);
   };
 
@@ -235,7 +282,10 @@ const SearchCarModal = ({ cerrarModal }) => {
 
   const getYears = () => {
     if (selectedMaker && selectedModel) {
-      fetch(`https://infocarsapi.p.rapidapi.com/cars/${selectedMaker}/${selectedModel}`, options)
+      fetch(
+        `https://infocarsapi.p.rapidapi.com/cars/${selectedMaker}/${selectedModel}`,
+        options
+      )
         .then((response) => response.json())
         .then((response) => setYears(response.years))
         .catch((err) => console.error(err));
@@ -246,33 +296,41 @@ const SearchCarModal = ({ cerrarModal }) => {
 
   const getCar = () => {
     if (selectedMaker && selectedModel && selectedYear) {
-      fetch(`https://infocarsapi.p.rapidapi.com/cars/${selectedMaker}/${selectedModel}/${selectedYear}`, options)
+      fetch(
+        `https://infocarsapi.p.rapidapi.com/cars/${selectedMaker}/${selectedModel}/${selectedYear}`,
+        options
+      )
         .then((response) => response.json())
         .then((response) => setActualCar(response.data))
         .catch((err) => console.error(err));
     } else {
-      console.log("Error getCar")
+      console.log("Error getCar");
     }
   };
 
   return (
     <>
-      <div className="fixed z-50 inset-0 overflow-y-auto ">
+      <div className="fixed z-50 inset-0 overflow-y-auto">
         <div className="flex items-center justify-center min-h-screen px-4 bg-gray-900 bg-opacity-50">
           <div
-            className={`w-[60rem] ${rolled ? "h-[45rem]" : "h-[12rem]"}  bg-white rounded-lg  p-6 relative bg-gray-100 overflow-hidden`}
+            className={` w-[55rem] ${rolled ? "h-[41rem]" : "h-[12rem]"} ${
+              rolled ? "md-max:h-[50rem]" : "md-max:h-[20rem]"
+            } md-max:mt-[-3rem] md-max:w-auto   bg-white rounded-lg  p-6 relative bg-gray-100 overflow-x-hidden`}
           >
-            <div className="modal-content h-full relative">
-              <h2 className={`${styles.aboutHeadText} py-4 px-2`}>
+            <div className="modal-content h-full relative ">
+              <h2 className={`${styles.aboutHeadText} py-4 px-2 md-max:px-8`}>
                 Find the Ideal Wheels for You
               </h2>
 
-              <div className="w-full">
-                <form action="" className="flex gap-3">
+              <div className="w-full ">
+                <form
+                  action=""
+                  className="flex gap-3 md-max:flex-col md-max:items-strech"
+                >
                   <div className="">
                     <select
                       name="maker"
-                      className="border border-gray-300 rounded-md px-4 py-2 w-52"
+                      className="border border-gray-300 rounded-md px-4 py-2 w-52 md-max:w-full"
                       defaultValue={"Maker"}
                       onChange={handleSelectMakerChange}
                     >
@@ -280,7 +338,7 @@ const SearchCarModal = ({ cerrarModal }) => {
                         Maker
                       </option>
                       {Object.keys(makers).map((maker, index) => (
-                        <option key={index} value={makers[maker]} >
+                        <option key={index} value={makers[maker]}>
                           {makers[maker]}
                         </option>
                       ))}
@@ -290,25 +348,26 @@ const SearchCarModal = ({ cerrarModal }) => {
                     <select
                       name="model"
                       disabled={selectedMaker === ""}
-                      className="border border-gray-300 rounded-md px-4 py-2 pr-12 w-52"
+                      className="border border-gray-300 rounded-md px-4 py-2 pr-12 w-52 md-max:w-full"
                       defaultValue={"Model"}
                       onChange={handleSelectModelChange}
                     >
                       <option disabled value="Model">
                         Model
                       </option>
-                      {models && models.map((model, index) => (
-                        <option key={index} value={model} >
-                          {model}
-                        </option>
-                      ))}
+                      {models &&
+                        models.map((model, index) => (
+                          <option key={index} value={model}>
+                            {model}
+                          </option>
+                        ))}
                     </select>
                   </div>
                   <div>
                     <select
                       name="year"
                       disabled={selectedModel === ""}
-                      className="border border-gray-300 rounded-md px-4 py-2 w-30"
+                      className="border border-gray-300 rounded-md px-4 py-2 w-30 md-max:w-full"
                       defaultValue={"Year"}
                       onChange={handleSelectYearChange}
                       onClick={getYears}
@@ -316,43 +375,52 @@ const SearchCarModal = ({ cerrarModal }) => {
                       <option disabled value="Year">
                         Year
                       </option>
-                      {years && years.map((year, index) => (
-                        <option key={index + "" + year} value={year} >
-                          {year}
-                        </option>
-                      ))}
+                      {years &&
+                        years.map((year, index) => (
+                          <option key={index + "" + year} value={year}>
+                            {year}
+                          </option>
+                        ))}
                     </select>
                   </div>
                   <button
                     type="submit"
                     onClick={() => {
                       event.preventDefault();
-                      setActualCar(null)
+                      setActualCar(null);
                       getCar();
-                      setRolled(true)
+                      setRolled(true);
                     }}
-                    className="ml-2 px-4 py-2 text-gray-700 bg-primary text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blule-600"
+                    className="md-max:w-full md-max:ml-0 ml-2 px-4 py-2 text-gray-700 bg-primary text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blule-600"
                   >
                     Submit
                   </button>
                 </form>
               </div>
-
-              {actualCar ? <CompleteCar actualCar={actualCar}/> : rolled && <LoadingCar/> }
-
-              <button
-                type="button"
-                onClick={cerrarModal}
-                className="absolute top-4 right-4 px-4 py-2 text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 focus:outline-none focus:bg-gray-300"
-              >
-                Cerrar
-              </button>
+              
+              <div className="pb-4">
+              {actualCar ? (
+                <CompleteCar actualCar={actualCar} />
+              ) : (
+                rolled && <LoadingCar />
+              )}
+              </div>
+              
             </div>
-            {rolled ?
-              <div className="absolute left-0 bottom-0 w-full h-12 bg-primary rounded-b-lg flex flex-row-reverse ">
+            <button
+              type="button"
+              onClick={cerrarModal}
+              className="absolute top-2 right-2 px-4 py-2 text-gray-700 bg-gray-200 text-blue-800 rounded-lg hover:bg-gray-300 focus:outline-none focus:bg-gray-300"
+            >
+              x
+            </button>
+            {rolled ? (
+              <div className="absolute md-max:fixed left-0 bottom-0 w-full h-10 bg-primary rounded-b-lg flex flex-row-reverse ">
                 <button className="mr-6 text-[#fff]">Rent Now</button>
-              </div> : <div></div>
-            }
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,10 @@
 
 
-const Form = () => {
+const Form = ({abrirModal}) => {
+
+  const handleAbrirModal = () => {
+    abrirModal();
+  }
 
   return (
     <div className="flex flex-row  justify-center relative mt-[-45px]">
@@ -48,6 +52,7 @@ const Form = () => {
         <button
           className="w-32 h-12 bg-primary hover:bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline sm-max:mt-4"
           type="button"
+          onClick={handleAbrirModal}
         >
           Search
         </button>
